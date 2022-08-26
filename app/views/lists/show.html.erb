@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @list.title %></h1>
+<p><%= @list.body %></p>
+
+
+<%= render 'items', items: @items, list: @list %>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>

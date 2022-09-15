@@ -16,6 +16,13 @@
   <%= form.label :body %>
   <%= form.text_area :body %>
 
+   <div class="fieldset">
+    <%= form.label :affiliated_user_ids, 'Available for:' %>
+    <%= form.collection_check_boxes :affiliated_user_ids, User.where.not(id: current_user.id), :id, :email, { class: 'input' } do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

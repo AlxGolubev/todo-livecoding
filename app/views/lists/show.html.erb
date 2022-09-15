@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1><%= @list.title %></h1>
 <p><%= @list.body %></p>
+<p>Shared to: <%= @list.affiliated_users.pluck(:email).join(', ') %>
 
 
 <%= render 'items', items: @items, list: @list %>
